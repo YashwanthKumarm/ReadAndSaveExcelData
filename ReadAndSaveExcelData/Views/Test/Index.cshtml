@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/angular.js"></script>
+<script src="~/AngularJs/xlsx.full.min.js"></script>
+<script src="~/AngularJs/jszip.js"></script>
+<script src="~/AngularJs/myapp.js"></script>
+<script src="~/AngularJs/controller.js"></script>
+<script src="~/AngularJs/service.js"></script>
+<h2>Index</h2>
+<div ng-app="myapp" ng-controller="mycontroller">
+    <div class="form-inline">
+        <input type="file" name="file" class="form-control" onchange="angular.element(this).scope().UploadFile(this.files)" />
+        <input type="button" value="import" class="btn btn-success" ng-disabled="!SelectedFileForUpload" ng-click="ParseExcelDataAndSave()" />
+        <br />
+        <span style="color:red">
+            {{Message}}
+        </span>
+    </div>
+</div>
